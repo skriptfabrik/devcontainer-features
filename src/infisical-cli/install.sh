@@ -4,11 +4,16 @@ set -e
 
 # Debian / Ubuntu packages
 install_debian_packages() {
+    # Install prerequisites
+    apt-get -y update
+    if ! -x $(command -v curl); then
+        apt-get -y install --no-install-recommends curl
+    fi
+
     # Add Infisical repository
     curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh' | bash
 
     # Install Infisical CLI
-    apt-get -y update
     apt-get -y install --no-install-recommends infisical
 
     # Clean up
@@ -35,6 +40,9 @@ install_redhat_packages() {
 
 # Alpine Linux packages
 install_alpine_packages() {
+    # Install prerequisites
+    apk add --no-cache bash sudo
+
     # Add Infisical repository
     curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.alpine.sh' | bash
 
