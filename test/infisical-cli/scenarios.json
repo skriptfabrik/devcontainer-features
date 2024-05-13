@@ -1,6 +1,24 @@
 {
-    "infisical-cli": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "alpine": {
+        "image": "alpine:latest",
+        "features": {
+            "infisical-cli": {}
+        }
+    },
+    "debian": {
+        "image": "debian:latest",
+        "features": {
+            "infisical-cli": {}
+        }
+    },
+    "fedora": {
+        "image": "fedora:latest",
+        "features": {
+            "infisical-cli": {}
+        }
+    },
+    "ubuntu": {
+        "image": "ubuntu:latest",
         "features": {
             "infisical-cli": {}
         }

@@ -1,6 +1,6 @@
 {
-    "tests": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "all_the_clis": {
+        "image": "ubuntu:latest",
         "features": {
             "infisical-cli": {}
         }
