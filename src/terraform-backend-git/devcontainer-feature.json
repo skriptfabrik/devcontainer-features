@@ -1,0 +1,10 @@
+{
+    "id": "terraform-backend-git",
+    "version": "1.0.0",
+    "name": "Terraform State management using Git",
+    "documentationURL": "https://github.com/skriptfabrik/devcontainer-features/tree/main/src/terraform-backend-git",
+    "description": "Installs terraform-backend-git binary.",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

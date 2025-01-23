@@ -8,6 +8,7 @@ This repository contains a _collection_ of dev container Features.
 Please take a closer look at the detailed instructions for the individual features:
 
 - [Infisical CLI](src/infisical-cli)
+- [Terraform State management using Git](src/terraform-backend-git)
 
 ## Repo and Feature Structure
 
@@ -19,6 +20,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   ├── infisical-cli
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
+│   ├── terraform-backend-git
+│   │   ├── devcontainer-feature.json
+│   │   └── install.sh
 |   ├── ...
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
@@ -27,6 +31,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   │   ├── all_the_clis.sh
 │   │   └── scenarios.json
 │   ├── infisical-cli
+│   │   ├── scenarios.json
+│   │   └── test.sh
+│   ├── terraform-backend-git
 │   │   ├── scenarios.json
 │   │   └── test.sh
 |   ├── ...
