@@ -11,7 +11,11 @@ Installs terraform-backend-git binary.
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Select or enter a terraform-backend-git version. | string | latest |
 
 
 
