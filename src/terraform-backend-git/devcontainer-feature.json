@@ -14,7 +14,7 @@
             "description": "Select or enter a terraform-backend-git version."
         }
     },
-    "entrypoint": "/usr/local/bin/terraform-backend-git",
+    "postCreateCommand": "/usr/local/bin/terraform-backend-git &",
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ]
