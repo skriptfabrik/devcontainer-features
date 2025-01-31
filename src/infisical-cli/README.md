@@ -11,7 +11,11 @@ Installs Infisical CLI.
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Select or enter a infisical-cli version. | string | latest |
 
 
 
