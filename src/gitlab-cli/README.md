@@ -11,7 +11,11 @@ Installs GitLab CLI (glab).
 }
 ```
 
+## Options
 
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Select or enter a gitlab-cli version. | string | latest |
 
 
 
