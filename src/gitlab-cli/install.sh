@@ -47,3 +47,6 @@ echo "Downloading gitlab-cli from ${DOWNLOAD_URL}"
 curl -sSLO "${DOWNLOAD_URL}"
 dpkg -i "${DEB_PACKAGE}"
 rm -f "${DEB_PACKAGE}"
+
+# Install bash completion
+glab completion -s bash > /etc/bash_completion.d/glab
