@@ -1,18 +1,6 @@
 {
-    "alpine": {
-        "image": "alpine:latest",
-        "features": {
-            "infisical-cli": {}
-        }
-    },
     "debian": {
         "image": "debian:latest",
-        "features": {
-            "infisical-cli": {}
-        }
-    },
-    "fedora": {
-        "image": "fedora:latest",
         "features": {
             "infisical-cli": {}
         }

@@ -2,52 +2,7 @@
 
 set -e
 
-# Debian / Ubuntu packages
-install_debian_packages() {
-    # Install prerequisites
-    apt-get -y update
-    apt-get -y install --no-install-recommends curl ca-certificates
-
-    # Add Infisical repository
-    curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh' | bash
-
-    # Install Infisical CLI
-    apt-get -y install --no-install-recommends infisical
-
-    # Clean up
-    apt-get -y clean
-    rm -rf /var/lib/apt/lists/*
-}
-
-# RedHat / RockyLinux / CentOS / Fedora packages
-install_redhat_packages() {
-    local install_cmd=microdnf
-    if ! type microdnf > /dev/null 2>&1; then
-        install_cmd=dnf
-        if ! type dnf > /dev/null 2>&1; then
-            install_cmd=yum
-        fi
-    fi
-
-    # Add Infisical repository
-    curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.rpm.sh' | bash
-
-    # Install Infisical CLI
-    ${install_cmd} -y install infisical
-}
-
-# Alpine Linux packages
-install_alpine_packages() {
-    # Install prerequisites
-    apk add --no-cache bash curl sudo
-
-    # Add Infisical repository
-    curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.alpine.sh' | bash
-
-    # Install Infisical CLI
-    apk update
-    apk add --no-cache infisical
-}
+CLI_VERSION="${VERSION:-"latest"}"
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
@@ -58,26 +13,37 @@ fi
 . /etc/os-release
 
 # Get an adjusted ID independent of distro variants
-if [ "${ID}" = "debian" ] || [ "${ID_LIKE}" = "debian" ]; then
-    ADJUSTED_ID="debian"
-elif [[ "${ID}" = "rhel" || "${ID}" = "fedora" || "${ID}" = "mariner" || "${ID_LIKE}" = *"rhel"* || "${ID_LIKE}" = *"fedora"* || "${ID_LIKE}" = *"mariner"* ]]; then
-    ADJUSTED_ID="rhel"
-elif [ "${ID}" = "alpine" ]; then
-    ADJUSTED_ID="alpine"
-else
+if [ "${ID}" != "debian" ] && [ "${ID_LIKE}" != "debian" ]; then
     echo "Linux distro ${ID} not supported."
     exit 1
 fi
 
-# Install packages for appropriate OS
-case "${ADJUSTED_ID}" in
-    "debian")
-        install_debian_packages
-        ;;
-    "rhel")
-        install_redhat_packages
-        ;;
-    "alpine")
-        install_alpine_packages
-        ;;
-esac
+# Install prerequisites
+apt-get -y update
+apt-get -y install --no-install-recommends curl ca-certificates jq
+
+# Clean up
+apt-get -y clean
+rm -rf /var/lib/apt/lists/*
+
+# Fetch latest version if needed
+if [ "${CLI_VERSION}" = "latest" ]; then
+    CLI_VERSION=$(curl -s https://api.github.com/repos/infisical/infisical/releases/latest | jq -r '.tag_name' | awk '{print substr($1, 16)}')
+fi
+
+# Detect current machine architecture
+if [ "$(uname -m)" = "aarch64" ]; then
+    ARCH="arm64"
+else
+    ARCH="amd64"
+fi
+
+# DEB package and download URL
+DEB_PACKAGE="infisical_${CLI_VERSION}_linux_${ARCH}.deb"
+DOWNLOAD_URL="https://dl.cloudsmith.io/public/infisical/infisical-cli/deb/any-distro/pool/any-version/main/i/in/infisical_${CLI_VERSION}/${DEB_PACKAGE}"
+
+# Download and install infisical-cli
+echo "Downloading infisical-cli from ${DOWNLOAD_URL}"
+curl -sSLO "${DOWNLOAD_URL}"
+dpkg -i "${DEB_PACKAGE}"
+rm -f "${DEB_PACKAGE}"

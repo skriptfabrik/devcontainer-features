@@ -19,26 +19,10 @@ jobs:
           - infisical-cli
           - terraform-backend-git
         baseImage:
-          - alpine:latest
           - debian:latest
-          - fedora:latest
           - ubuntu:latest
-          - mcr.microsoft.com/devcontainers/base:alpine
           - mcr.microsoft.com/devcontainers/base:debian
           - mcr.microsoft.com/devcontainers/base:ubuntu
-        exclude:
-          - features: gitlab-cli
-            baseImage: alpine:latest
-          - features: gitlab-cli
-            baseImage: fedora:latest
-          - features: gitlab-cli
-            baseImage: mcr.microsoft.com/devcontainers/base:alpine
-          - features: terraform-backend-git
-            baseImage: alpine:latest
-          - features: terraform-backend-git
-            baseImage: fedora:latest
-          - features: terraform-backend-git
-            baseImage: mcr.microsoft.com/devcontainers/base:alpine
 
     steps:
       - name: Checkout
