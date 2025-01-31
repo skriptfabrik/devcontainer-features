@@ -2,6 +2,7 @@
     "all_the_clis": {
         "image": "ubuntu:latest",
         "features": {
+            "gitlab-cli": {},
             "infisical-cli": {},
             "terraform-backend-git": {}
         }

@@ -1,0 +1,10 @@
+{
+    "id": "gitlab-cli",
+    "version": "1.0.0",
+    "name": "GitLab CLI",
+    "documentationURL": "https://github.com/skriptfabrik/devcontainer-features/tree/main/src/gitlab-cli",
+    "description": "Installs GitLab CLI (glab).",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

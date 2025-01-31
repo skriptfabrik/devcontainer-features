@@ -1,0 +1,14 @@
+{
+    "debian": {
+        "image": "debian:latest",
+        "features": {
+            "gitlab-cli": {}
+        }
+    },
+    "ubuntu": {
+        "image": "ubuntu:latest",
+        "features": {
+            "gitlab-cli": {}
+        }
+    }
+}

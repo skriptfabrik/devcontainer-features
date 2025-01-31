@@ -7,6 +7,7 @@
 This repository contains a _collection_ of dev container Features.
 Please take a closer look at the detailed instructions for the individual features:
 
+- [GitLab CLI](src/gitlab-cli)
 - [Infisical CLI](src/infisical-cli)
 - [Terraform State management using Git](src/terraform-backend-git)
 
@@ -17,6 +18,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 
 ```
 ├── src
+│   ├── gitlab-cli
+│   │   ├── devcontainer-feature.json
+│   │   └── install.sh
 │   ├── infisical-cli
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
@@ -30,6 +34,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   ├── __global
 │   │   ├── all_the_clis.sh
 │   │   └── scenarios.json
+│   ├── gitlab-cli
+│   │   ├── scenarios.json
+│   │   └── test.sh
 │   ├── infisical-cli
 │   │   ├── scenarios.json
 │   │   └── test.sh
