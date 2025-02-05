@@ -1,0 +1,14 @@
+{
+    "debian": {
+        "image": "debian:latest",
+        "features": {
+            "hcloud-cli": {}
+        }
+    },
+    "ubuntu": {
+        "image": "ubuntu:latest",
+        "features": {
+            "hcloud-cli": {}
+        }
+    }
+}

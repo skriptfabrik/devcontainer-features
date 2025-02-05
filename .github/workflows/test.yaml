@@ -16,6 +16,7 @@ jobs:
       matrix:
         features:
           - gitlab-cli
+          - hcloud-cli
           - infisical-cli
           - terraform-backend-git
         baseImage:
@@ -42,6 +43,7 @@ jobs:
       matrix:
         features:
           - gitlab-cli
+          - hcloud-cli
           - infisical-cli
           - terraform-backend-git
 

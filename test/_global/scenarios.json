@@ -3,6 +3,7 @@
         "image": "ubuntu:latest",
         "features": {
             "gitlab-cli": {},
+            "hcloud-cli": {},
             "infisical-cli": {},
             "terraform-backend-git": {}
         }
