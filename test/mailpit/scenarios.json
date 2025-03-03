@@ -1,0 +1,14 @@
+{
+    "debian": {
+        "image": "debian:latest",
+        "features": {
+            "mailpit": {}
+        }
+    },
+    "ubuntu": {
+        "image": "ubuntu:latest",
+        "features": {
+            "mailpit": {}
+        }
+    }
+}

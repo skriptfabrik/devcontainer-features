@@ -10,6 +10,7 @@ Please take a closer look at the detailed instructions for the individual featur
 - [GitLab CLI](src/gitlab-cli)
 - [Hetzner Cloud CLI](src/hcloud-cli)
 - [Infisical CLI](src/infisical-cli)
+- [Mailpit](src/mailpit)
 - [Terraform State management using Git](src/terraform-backend-git)
 
 ## Repo and Feature Structure
@@ -26,6 +27,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
 │   ├── infisical-cli
+│   │   ├── devcontainer-feature.json
+│   │   └── install.sh
+│   ├── mailpit
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
 │   ├── terraform-backend-git
@@ -45,6 +49,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   │   ├── scenarios.json
 │   │   └── test.sh
 │   ├── infisical-cli
+│   │   ├── scenarios.json
+│   │   └── test.sh
+│   ├── mailpit
 │   │   ├── scenarios.json
 │   │   └── test.sh
 │   ├── terraform-backend-git

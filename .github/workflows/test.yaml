@@ -18,6 +18,7 @@ jobs:
           - gitlab-cli
           - hcloud-cli
           - infisical-cli
+          - mailpit
           - terraform-backend-git
         baseImage:
           - debian:latest
@@ -45,6 +46,7 @@ jobs:
           - gitlab-cli
           - hcloud-cli
           - infisical-cli
+          - mailpit
           - terraform-backend-git
 
     steps:

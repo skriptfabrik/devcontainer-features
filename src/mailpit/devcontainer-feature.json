@@ -1,0 +1,28 @@
+{
+    "id": "mailpit",
+    "version": "1.0.0",
+    "name": "An email and SMTP testing tool with API for developers",
+    "documentationURL": "https://github.com/skriptfabrik/devcontainer-features/tree/main/src/mailpit",
+    "description": "Installs Mailpit binary.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Select or enter a Mailpit version."
+        }
+    },
+    "mounts": [
+        {
+            "source": "dind-var-lib-mailpit-${devcontainerId}",
+            "target": "/var/lib/mailpit",
+            "type": "volume"
+        }
+    ],
+    "entrypoint": "/usr/local/share/mailpit-init.sh",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
