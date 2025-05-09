@@ -5,13 +5,9 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    reviewers:
-      - skriptfabrik/github-actions-maintainers
 
   - package-ecosystem: 'devcontainers'
     directory: '/'
     schedule:
       interval: 'weekly'
-    reviewers:
-      - skriptfabrik/devcontainer-maintainers
-    
+
