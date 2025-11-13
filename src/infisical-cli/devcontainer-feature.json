@@ -1,6 +1,6 @@
 {
     "id": "infisical-cli",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "name": "Infisical CLI",
     "documentationURL": "https://github.com/skriptfabrik/devcontainer-features/tree/main/src/infisical-cli",
     "description": "Installs Infisical CLI.",

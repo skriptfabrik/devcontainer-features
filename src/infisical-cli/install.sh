@@ -28,7 +28,7 @@ rm -rf /var/lib/apt/lists/*
 
 # Fetch latest version if needed
 if [ "${CLI_VERSION}" = "latest" ]; then
-    CLI_VERSION=$(curl -s https://api.github.com/repos/infisical/infisical/releases/latest | jq -r '.tag_name' | awk '{print substr($1, 16)}')
+    CLI_VERSION=$(curl -s https://api.github.com/repos/infisical/cli/releases/latest | jq -r '.tag_name' | awk '{print substr($1, 2)}')
 fi
 
 # Detect current machine architecture
@@ -40,7 +40,7 @@ fi
 
 # DEB package and download URL
 DEB_PACKAGE="infisical_${CLI_VERSION}_linux_${ARCH}.deb"
-DOWNLOAD_URL="https://github.com/Infisical/infisical/releases/download/infisical-cli/v${CLI_VERSION}/${DEB_PACKAGE}"
+DOWNLOAD_URL="https://github.com/Infisical/cli/releases/download/v${CLI_VERSION}/${DEB_PACKAGE}"
 
 # Download and install infisical-cli
 echo "Downloading infisical-cli from ${DOWNLOAD_URL}"
