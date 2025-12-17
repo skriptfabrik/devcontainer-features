@@ -1,0 +1,21 @@
+{
+    "id": "yamlfix",
+    "version": "1.0.0",
+    "name": "yamlfix (via pipx)",
+    "documentationURL": "https://github.com/skriptfabrik/devcontainer-features/tree/main/src/yamlfix",
+    "description": "yamlfix is a simple opinionated yaml formatter that keeps your comments.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Select or enter a yamlfix version."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-extra/features/pipx-package",
+        "ghcr.io/devcontainers/features/python"
+    ]
+}

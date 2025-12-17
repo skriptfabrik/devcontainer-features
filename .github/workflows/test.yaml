@@ -20,6 +20,7 @@ jobs:
           - infisical-cli
           - mailpit
           - terraform-backend-git
+          - yamlfix
         baseImage:
           - debian:latest
           - ubuntu:latest

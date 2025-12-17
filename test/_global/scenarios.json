@@ -6,7 +6,8 @@
             "hcloud-cli": {},
             "infisical-cli": {},
             "mailpit": {},
-            "terraform-backend-git": {}
+            "terraform-backend-git": {},
+            "yamlfix": {}
         }
     }
 }
