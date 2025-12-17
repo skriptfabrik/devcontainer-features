@@ -7,14 +7,13 @@ set -e
 # Provides the 'check' and 'reportResults' commands.
 source dev-container-features-test-lib
 
-# Feature-specific tests
+# Definition specific tests
+. /etc/os-release
+
+# Scenario-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "check for glab" glab --version
-check "check for hcloud" hcloud version
-check "check for infisical" infisical --version
-check "check for mailpit" mailpit version
-check "check for terraform-backend-git" terraform-backend-git version
+check "distro" test "${ID}" = "debian"
 check "check for yamlfix" yamlfix --version
 
 # Report results

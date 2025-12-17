@@ -12,6 +12,7 @@ Please take a closer look at the detailed instructions for the individual featur
 - [Infisical CLI](src/infisical-cli)
 - [Mailpit](src/mailpit)
 - [Terraform State management using Git](src/terraform-backend-git)
+- [yamlfix](src/yamlfix)
 
 ## Repo and Feature Structure
 
@@ -35,6 +36,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   ├── terraform-backend-git
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
+│   ├── yamlfix
+│   │   ├── devcontainer-feature.json
+│   │   └── install.sh
 |   ├── ...
 │   │   ├── devcontainer-feature.json
 │   │   └── install.sh
@@ -55,6 +59,9 @@ Each Feature has its own sub-folder, containing at least a `devcontainer-feature
 │   │   ├── scenarios.json
 │   │   └── test.sh
 │   ├── terraform-backend-git
+│   │   ├── scenarios.json
+│   │   └── test.sh
+│   ├── yamlfix
 │   │   ├── scenarios.json
 │   │   └── test.sh
 |   ├── ...

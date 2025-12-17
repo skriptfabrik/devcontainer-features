@@ -1,0 +1,14 @@
+{
+    "debian": {
+        "image": "debian:latest",
+        "features": {
+            "yamlfix": {}
+        }
+    },
+    "ubuntu": {
+        "image": "ubuntu:latest",
+        "features": {
+            "yamlfix": {}
+        }
+    }
+}
